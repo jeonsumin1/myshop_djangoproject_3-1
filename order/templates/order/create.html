@@ -50,7 +50,7 @@ Checkout
             {% csrf_token %}
             <input type="hidden" name="pre_order_id" value="0">
             <input type="hidden" name="amount" value="{{cart.get_total_price|floatformat:'2'}}">
-            <input type="submit" class="btn btn-primary float-right" value="Place Order">
+            <input type="submit" class="btn badge-pill btn-sm btn-outline-info float-right" value="Place Order">
         </form>
     </div>
 </div>
