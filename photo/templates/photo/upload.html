@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block title %}- Upload{% endblock %}
+{% block content %}
+<div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8 panel panel-default">
+    <form action="" method="post" enctype="multipart/form-data">
+        {{form.as_p}}
+        {% csrf_token %}
+        <input type="submit" class="btn badge-pill btn-outline-info" a href="{% url 'photo:photo_list' %}" value="Upload"> </form>
+
+        <p>{{post.text|linebreaksbr}}</p>
+        <a href="{% url 'photo:photo_list' %}" class="btn badge-pill btn-sm btn-outline-info ">Home</a>
+        <input type="submit" class="btn badge-pill btn-info btn-sm" value="Back" onClick="history.go(-1)">
+    </div>
+    <div class="col-md-2"></div>
+</div>
+{% endblock %}

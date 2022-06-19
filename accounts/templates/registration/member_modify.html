@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>회원수정</h1>
+    <form action="{% url 'member_modify' %}" method="POST">
+        {% csrf_token %}
+        username : <input type="text" name="username" value="{{ user.username }}">
+            <p>{{linebreaksbr}}</p>
+        first_name : <input type="text" name="first_name" value="{{ user.first_name }}">
+            <p>{{linebreaksbr}}</p>
+        last_name : <input type="text" name="last_name" value="{{ user.last_name }}">
+            <p>{{linebreaksbr}}</p>
+        email : <input type="text" name="email" value="{{ user.email }}">
+            <p>{{linebreaksbr}}</p>
+        birthdate : <input type="text" name="birthdate" value="{{ user.birthdate }}"> YYYY-MM-DD 형식으로 작성해 주세요.
+            <p>{{linebreaksbr}}</p>
+        address : <input type="text" name="address" value="{{ user.address }}">
+            <p>{{linebreaksbr}}</p>
+        postal_code : <input type="text" name="postal_code" value="{{ user.postal_code }}">
+            <p>{{linebreaksbr}}</p>
+        city : <input type="text" name="city" value="{{ user.city }}">
+            <p>{{linebreaksbr}}</p>
+        <input type="submit" class="btn badge-pill btn-sm" value="회원수정">
+    </form>
+
+</br>
+
+<a href="{% url 'photo:information' %}" class="btn badge-pill btn-sm btn-outline-info ">Home</a>
+<input type="submit" class="btn btn-info badge-pill btn-sm" value="Back" onClick="history.go(-1)">
+
+
+{% endblock %}

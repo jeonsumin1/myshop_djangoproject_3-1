@@ -1,0 +1,30 @@
+{% extends 'base.html' %} {% block title %}
+{{object.text|truncatechars:10}} {% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8 panel panel-default">
+    <p><img src="{{object.photo.url}}" style="width:100%;"></p>
+    <button type="button" class="btn badge-pill btn-info btn-sm">
+        {{object.author.username}}
+    </button>
+        <a href="{% url 'photo:photo_list' %}" class="btn badge-pill btn-sm btn-outline-info ">Home</a>
+        <input type="submit" class="btn badge-pill btn-outline-info btn-sm" value="Back" onClick="history.go(-1)">
+    <p>{{object.text|linebreaksbr}}</p>
+
+        <a href="{% url 'photo:photo_delete' pk=object.id %}" class="btn badge-pill btn-outline-danger btn-sm float-right">Delete</a>
+        <a href="{% url 'photo:photo_update' pk=object.id %}" class="btn badge-pill btn-outline-success btn-sm float-right">Update</a>
+
+    </div>
+    <div class="col-md-2"></div>
+</div>
+<div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8 panel panel-default">
+        {% load disqus_tags %}
+        {% disqus_show_comments %}
+    </div>
+    <div class="col-md-2"></div>
+</div>
+{% endblock %}

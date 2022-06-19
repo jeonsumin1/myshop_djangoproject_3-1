@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block title %}- List{% endblock %}
+
+{% block content %}
+<!--border-top-left-radius: 5px;
+                border-bottom-left-radius: 5px;-->
+<a href="{% url 'photo:photo_upload' %}" button type="button" id="upload" class="btn badge-pill btn-outline-info btn-sm float-right">Upload</a></li>
+<br/>
+<p>{{linebreaksbr}}</p>
+<style>
+    body {background-color: #FFFAFA;}
+
+</style>
+
+
+{% for post in photos %}
+
+<div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8 panel panel-default">
+
+        <p><img src="{{post.photo.url}}" style="width:100%;"></p>
+        <button type="button" class="btn badge-pill btn-sm btn-info">
+            {{post.author.username}}</button>
+        <p>{{post.text|linebreaksbr}}</p>
+        <p class="text-right">
+            <a href="{% url 'photo:photo_detail' pk=post.id %}" class="btn btn-sm badge-pill btn-outline-info">댓글달기</a>
+        </p>
+    </div>
+    <div class="col-md-2"></div>
+</div>
+{% endfor %}
+{% endblock %}
+

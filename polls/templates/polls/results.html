@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+    <h1>{{question.question_text}}</h1>
+    <ul>
+        {% for choice in question.choice_set.all %}
+        <li><b>{{choice.choice_text}} -- {{choice.votes}} vote{{choice.votes|pluralize}}</b></li>
+        {% endfor %}
+    </ul>
+
+<style>
+        a{
+            color: skyblue;
+        }
+</style>
+
+<a href="{% url 'polls:detail' question.id %}">Vote again?</a>
+<a href="{% url 'polls:index' %}"  class="btn btn-sm" >Polls List</a>
+
+
+{% endblock %}

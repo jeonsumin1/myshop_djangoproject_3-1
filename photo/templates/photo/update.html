@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block title %}- Update{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8 panel panel-default">
+        <form action="" method="post" enctype="multipart/form-data">
+            {{form.as_p}}
+            {% csrf_token %}
+            <input type="submit" class="btn badge-pill btn-sm btn-outline-success" value="Update">
+            <input type="submit" class="btn badge-pill btn-sm btn-outline-warning " value="Cancel" onClick="history.go(-1)">
+            <p>{{post.text|linebreaksbr}}</p>
+            <a href="{% url 'photo:photo_list' %}" class="btn badge-pill btn-sm btn-outline-info ">Home</a>
+        </form>
+        <p>{{post.text|linebreaksbr}}</p>
+        <!-- Cancel 버튼을 누르면  history.go(-1) 하나 이전의 페이지로 이동 -->
+
+
+    </div>
+    <div class="col-md-2"></div>
+</div>
+{% endblock %}

@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+{% block title %}- Information{% endblock %}
+
+{% block content %}
+
+<div class="row" >
+    <div class="col-md-2"></div>
+    <div class="col-md-8 panel panel-default" >
+
+        <div style="text-align: center; margin: 40px; ">
+            <h2>회원 정보</h2>
+        </div>
+        <table class="table" border="2" style="border: 1px solid #FFFAFA; background-color: white; border-radius: 15px; box-shadow: inset 0 0 8px #708090; ">
+            <tbody>
+            <tr>
+                <th width='25%'><h5>User ID</h5></th>
+                <td>{{ user }}</td>
+            </tr>
+            <tr>
+                <th><h5>first_name</h5></th>
+                <td style="">{{ user.first_name }}</td>
+            </tr>
+            <tr>
+                <th><h5>last_name</h5></th>
+                <td>{{ user.last_name }}</td>
+            </tr>
+            <tr>
+                <th><h5>email</h5></th>
+                <td>{{ user.email }}</td>
+            </tr>
+            <tr>
+                <th><h5>gender</h5></th>
+                <td>{{ user.gender }}</td>
+            </tr>
+            <tr>
+                <th><h5>birthdate</h5></th>
+                <td>{{ user.birthdate }}</td>
+            </tr>
+            <tr>
+                <th><h5>address</h5></th>
+                <td style="">{{ user.address }}</td>
+            </tr>
+            <tr>
+                <th><h5>postal_code</h5></th>
+                <td style="">{{ user.postal_code }}</td>
+            </tr>
+            <tr>
+                <th><h5>city</h5></th>
+                <td style="">{{ user.city }}</td>
+            </tr>
+            </tbody>
+        </table>
+        <p>{{post.text|linebreaksbr}}</p>
+        <input type="submit" class="btn btn-info btn-sm" value="Back" onClick="history.go(-1)">
+        <a href="/" class="btn btn-sm btn-outline-info">Home</a>
+        <a href="{% url 'member_modify' %}" class="btn btn-sm btn-outline-primary">회원수정</a>
+        <a href="{% url 'member_del' %}" class="btn btn-sm btn-outline-danger ">회원탈퇴</a>
+
+
+    </div>
+
+    <div class="col-md-2"></div>
+</div>
+
+
+{% endblock %}

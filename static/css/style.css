@@ -1,0 +1,33 @@
+body {
+    background-color: skyblue;
+
+}
+
+li a{
+    color: white;
+}
+
+h1{
+    color: darkblue;
+    margin: 50px 500px;
+}
+
+ul {
+color: white;
+
+}
+
+p {
+    color: white;
+    margin: 100px 500px;
+}
+
+input[type='radio'],
+input[type='radio']:checked {
+    margin: 0px 0px 0px 500px;
+}
+input[type='submit'] {
+    margin: 0px 0px 0px 500px;
+}
+
+
