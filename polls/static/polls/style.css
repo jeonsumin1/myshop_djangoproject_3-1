@@ -17,12 +17,4 @@ p {
     margin: 100px 500px;
 }
 
-input[type='radio'],
-input[type='radio']:checked {
-    margin: 0px 0px 0px 500px;
-}
-input[type='submit'] {
-    margin: 0px 0px 0px 500px;
-}
-
 
