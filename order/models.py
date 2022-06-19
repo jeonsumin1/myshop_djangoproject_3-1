@@ -126,5 +126,4 @@ def order_payment_validation(sender, instance, created, *args, **kwargs):
 
 
 from django.db.models.signals import post_save
-
 post_save.connect(order_payment_validation, sender=OrderTransaction)
