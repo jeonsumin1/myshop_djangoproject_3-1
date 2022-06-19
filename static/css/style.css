@@ -1,8 +1,3 @@
-body {
-    background-color: skyblue;
-
-}
-
 li a{
     color: skyblue;
 }
@@ -13,21 +8,13 @@ h1{
 }
 
 ul {
-color: white;
+color: skyblue;
 
 }
 
 p {
-    color: white;
+    color: skyblue;
     margin: 100px 500px;
-}
-
-input[type='radio'],
-input[type='radio']:checked {
-    margin: 0px 0px 0px 500px;
-}
-input[type='submit'] {
-    margin: 0px 0px 0px 500px;
 }
 
 
