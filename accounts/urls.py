@@ -4,7 +4,7 @@ from .views import register, member_modify, member_del
 
 urlpatterns = [
     path('login2/', auth_view.LoginView.as_view(), name='login'),
-    path('logout/', auth_view.LogoutView.as_view(template_name='registration/logout.html'), name='logout'),
+    path('logout2/', auth_view.LogoutView.as_view(template_name='registration/logout.html'), name='logout'),
     path('register/', register, name='register'),
 
     path('member_modify/', member_modify, name='member_modify'),   # 회원정보 수정 url
