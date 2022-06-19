@@ -67,7 +67,7 @@ class Cart(object):
         self.session
         self.session.modified = True
 
-    def get_prodict_total(self):
+    def get_product_total(self):
         return sum(Decimal(item['price']) * item['quantity'] for item in self.cart.values())
 
     @property
@@ -78,9 +78,9 @@ class Cart(object):
 
     def get_discount_total(self):
         if self.coupon:
-            if self.get_prodict_total() >= self.coupon.amount:
+            if self.get_product_total() >= self.coupon.amount:
                 return self.coupon.amount
         return Decimal(0)
 
     def get_total_price(self):
-        return self.get_prodict_total() - self.get_discount_total()
+        return self.get_product_total() - self.get_discount_total()
